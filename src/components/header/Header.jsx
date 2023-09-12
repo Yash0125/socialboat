@@ -20,13 +20,15 @@ const Header = () => {
     }
   };
 
+  
   useEffect(() => {
     if (searchQuery.trim() !== "") {
       fetchVideos();
     } else {
       setResults([]);
     }
-  }, [searchQuery,fetchVideos]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchQuery]);
 
   return (
     <>
