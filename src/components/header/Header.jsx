@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./header.css";
+import Results from "../results/Results";
 
 const Header = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -45,6 +46,11 @@ const Header = () => {
       <h1 className="search-text">
         Search for : <span className="search">{searchQuery}</span>
       </h1>
+      {searchQuery === "" ? (
+        <div className="results">No results found</div>
+      ) : (
+        <Results results={results} />
+      )}
     </>
   );
 };
