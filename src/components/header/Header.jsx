@@ -6,6 +6,7 @@ const Header = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [results, setResults] = useState([]);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const fetchVideos = async () => {
     try {
       const response = await fetch(
@@ -25,7 +26,7 @@ const Header = () => {
     } else {
       setResults([]);
     }
-  }, [searchQuery]);
+  }, [searchQuery,fetchVideos]);
 
   return (
     <>
