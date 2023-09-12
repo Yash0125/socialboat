@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import "./header.css";
 import Results from "../results/Results";
 
@@ -6,7 +6,7 @@ const Header = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [results, setResults] = useState([]);
 
-  const fetchVideos = async () => {
+  const fetchVideos = useCallback(async () => {
     try {
       const response = await fetch(
         `https://asia-south1-socialboat-dev.cloudfunctions.net/assignmentVideos?q=${searchQuery}&numResults=10`
@@ -17,15 +17,16 @@ const Header = () => {
     } catch (error) {
       console.error("Error fetching videos:", error);
     }
-  };
-
+  }, [searchQuery,results]);
+  
   useEffect(() => {
     if (searchQuery.trim() !== "") {
       fetchVideos();
     } else {
       setResults([]);
     }
-  }, [searchQuery]);
+  }, [searchQuery, fetchVideos]);
+  
 
   return (
     <>
