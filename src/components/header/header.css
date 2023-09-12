@@ -1,0 +1,63 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  input[type="text"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 300px;
+  }
+  
+  .profile-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color:rgb(247, 228, 228);
+  }
+  
+  .search{
+    color: red;
+  }
+
+  .search-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  @media (max-width: 425px) {
+    .header {
+        display: flex;
+      
+    }
+  
+    .logo {
+      margin-bottom: 10px; 
+      justify-content: center;
+    }
+  
+    input[type="text"] {
+      width: 80%;
+      margin: 5px;
+    }
+    .profile-image {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        background-color:rgb(247, 228, 228);
+      }
+  }
+  
